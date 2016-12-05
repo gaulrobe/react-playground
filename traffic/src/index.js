@@ -7,7 +7,15 @@ import segmentsReducer from './reducers/traffic'
 import segmentsJson from './data/segments.json'
 import { PERSIST_KEY, persistStateInLocalStorage } from './persist/LocalStoragePersister'
 
-const segments = JSON.parse(localStorage.getItem(PERSIST_KEY)).segments || segmentsJson;
+var segments = undefined;
+const localSegmentsJson = JSON.parse(localStorage.getItem(PERSIST_KEY));
+if (localSegmentsJson) {
+    segments = localSegmentsJson.segments;
+}
+else {
+    segments = segmentsJson;
+}
+
 const store = createStore(segmentsReducer, {segments});
 
 store.subscribe(() => {
