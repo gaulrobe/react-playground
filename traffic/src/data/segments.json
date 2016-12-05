@@ -1,0 +1,14 @@
+[
+    {
+        "name": "t_c_rollout",
+        "percentage": "50",
+        "country": "us",
+        "institution": "umich.edu"
+    },
+    {
+        "name": "msu_dashboard",
+        "percentage": "100",
+        "country": "us",
+        "institution": "msu.edu"
+    }
+]
